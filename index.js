@@ -1,3 +1,6 @@
+const DATA = "https://raw.githubusercontent.com/SomeRanDev/someran.dev-streams/refs/heads/main/data.json";
+const NAMES = "https://raw.githubusercontent.com/SomeRanDev/someran.dev-streams/refs/heads/main/names.json";
+
 function main() {
 	// Get requested stream index.
 	let streamIndex = null;
@@ -20,11 +23,11 @@ function main() {
 }
 
 function getData(then) {
-	fetch("data.json").then(r => r.json()).then(then);
+	fetch(DATA).then(r => r.json()).then(then);
 }
 
 function getDataAndNames(then) {
-	Promise.all([fetch("data.json"), fetch("names.json")])
+	Promise.all([fetch(DATA), fetch(NAMES)])
 		.then(([data, names]) => Promise.all([data.json(), names.json()]))
 		.then(then);
 }
