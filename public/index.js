@@ -119,7 +119,11 @@ function redirectToIndex(streamIndex, json) {
 			}
 		}
 	} else {
-		setDocumentText(`Stream #${streamIndex} has not happened yet!`);
+		if(streamIndex >= 0 && streamIndex < json.length) {
+			setDocumentText(`Stream #${streamIndex} is lost media. Sorry 😔`);
+		} else {
+			setDocumentText(`Stream #${streamIndex} has not happened yet!`);
+		}
 	}
 }
 
