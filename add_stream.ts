@@ -12,7 +12,7 @@ const existingData = JSON.parse(await Deno.readTextFile("./data.json"));
 
 // ---
 
-const defaultIndex = existingData.at(-1)[0];
+const defaultIndex = existingData.at(-1)[0] + 1;
 const latestYouTubeStream = await getLatestYoutubeLiveId("SomeRanDev2");
 const latestTwitchStream = await getLatestTwitchVodId("SomeRanDev");
 
