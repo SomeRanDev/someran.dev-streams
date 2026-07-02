@@ -34,11 +34,11 @@ function getDataAndNames(then) {
 
 function listStreams([data, names]) {
 	const combinedData = [];
-	for(let i = 0; i < data.length; i++) {
-		combinedData.push([data[i], names[i]]);
+	for(let i = data.length - 1; i >= 0; i--) {
+		combinedData.push([i, data[i], names[i]]);
 	}
 
-	const html = combinedData.map(function([data, name], index) {
+	const html = combinedData.map(function([index, data, name]) {
 		if(index === 0) {
 			return null;
 		}
