@@ -21,12 +21,12 @@ if(index <= 0 || isNaN(index)) {
 	index = defaultIndex;
 }
 
-let youtubeId = prompt(`YouTube ID (${latestYouTubeStream.videoId}): `).trim();
+let youtubeId = prompt(`YouTube ID (https://www.youtube.com/watch?v=${latestYouTubeStream.videoId}): `).trim();
 if(!youtubeId || youtubeId.length <= 0) {
 	youtubeId = latestYouTubeStream.videoId;
 }
 
-let twitchId = prompt(`Twitch ID (${latestTwitchStream}): `).trim();
+let twitchId = prompt(`Twitch ID (https://www.twitch.tv/videos/${latestTwitchStream}): `).trim();
 if(!twitchId || twitchId.length <= 0) {
 	twitchId = latestTwitchStream;
 }
