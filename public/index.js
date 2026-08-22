@@ -119,8 +119,15 @@ function redirectToIndex(streamIndex, json) {
 			}
 		}
 	} else {
-		if(streamIndex >= 0 && streamIndex < json.length) {
+		// If stream index is within the next 10 streams, just go to Twitch
+		if(streamIndex >= 0 && streamIndex >= json.length && streamIndex < json.length + 10) {
+			window.location.href = `https://twitch.tv/SomeRanDev`;
+
+		// If stream data doesn't exist but within the JSON data, it is lost media.
+		} else if(streamIndex >= 0 && streamIndex < json.length) {
 			setDocumentText(`Stream #${streamIndex} is lost media. Sorry 😔`);
+
+		// Otherwise, this is a FAR future stream.
 		} else {
 			setDocumentText(`Stream #${streamIndex} has not happened yet!`);
 		}
