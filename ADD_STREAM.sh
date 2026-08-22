@@ -1,0 +1,1 @@
+deno --allow-read --allow-write add_stream.ts
