@@ -46,6 +46,7 @@ function listStreams([data, names]) {
 		let text = "";
 		let youtubeId = null;
 		let twitchId = null;
+		let date = null;
 		if(data === null) {
 			text = "Lost Media";
 		} else if(typeof data === "string") {
@@ -54,6 +55,7 @@ function listStreams([data, names]) {
 		} else if(Array.isArray(data)) {
 			youtubeId = data[1];
 			twitchId = data[2];
+			date = data[3];
 			text = name[1];
 		}
 
@@ -68,7 +70,7 @@ function listStreams([data, names]) {
 		if(twitchId !== null) {
 			twitchUrl = `https://twitch.tv/videos/${twitchId}`;
 		}
-		return generateStreamEntry(index, text, thumbnailUrl, youtubeUrl, twitchUrl);
+		return generateStreamEntry(index, text, date, thumbnailUrl, youtubeUrl, twitchUrl);
 	}).filter((o) => o !== null).join("<br>");
 
 	document.body.classList.remove("message");
@@ -77,7 +79,7 @@ function listStreams([data, names]) {
 	setDocumentText(html);
 }
 
-function generateStreamEntry(index, title, thumbnailUrl, youtubeUrl, twitchUrl) {
+function generateStreamEntry(index, title, date, thumbnailUrl, youtubeUrl, twitchUrl) {
 	let links = [];
 	if(youtubeUrl !== null) {
 		links.push([youtubeUrl, "YouTube"]);
@@ -95,7 +97,10 @@ return `
     >
 
     <div class="content">
-        <div class="index">#${index}</div>
+        <div class="heading">
+            <div class="index">#${index}</div>
+            ${date ? `<div class="date">${date}</div>` : ""}
+        </div>
         <div class="title">
             ${title}
         </div>

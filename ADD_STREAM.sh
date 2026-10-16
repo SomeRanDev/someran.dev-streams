@@ -1,1 +1,1 @@
-deno --allow-read --allow-write add_stream.ts
+cargo run --release --manifest-path StreamExtractor/Cargo.toml -- "$@"

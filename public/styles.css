@@ -93,6 +93,14 @@ body.stream-list > #content {
 	min-width: 0;
 }
 
+.heading {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	column-gap: 14px;
+	margin-bottom: 8px;
+}
+
 .index {
 	align: "left";
 	font-size: 2rem;
@@ -100,7 +108,13 @@ body.stream-list > #content {
 	letter-spacing: .08em;
 	text-transform: uppercase;
 	color: #93c5fd;
-	margin-bottom: 8px;
+}
+
+.date {
+	font-size: 1rem;
+	font-weight: 600;
+	color: #c7d2fe;
+	opacity: .8;
 }
 
 .title {
@@ -148,6 +162,10 @@ body.stream-list > #content {
 
 	.index {
 		font-size: 1.5rem;
+	}
+
+	.date {
+		font-size: .85rem;
 	}
 
 /*	.title {

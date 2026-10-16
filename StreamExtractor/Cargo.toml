@@ -1,0 +1,11 @@
+[package]
+name = "stream-extractor"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.104"
+chrono = "0.4.45"
+serde = "1.0.229"
+serde_json = "1.0.154"
+ureq = { version = "3.4.2", features = ["json"] }
