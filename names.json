@@ -155,5 +155,10 @@
 	[139, "testing youtube streaming interface"],
 	[140, "testing youtube streaming interface (part 2)"],
 
-	[141, "if you can help me with this Blender issue, I'll gift you a free sub"]
+	[141, "if you can help me with this Blender issue, I'll gift you a free sub"],
+	[142, "animating with stretchy IKs for my game"],
+	[143, "doing \"research\" for my game (i swear)"],
+	[144, "modeling for my video game (my tummy hurts)"],
+	null,
+	[146, "please help me model a cowlick in Blender (im bad at gamedev)"]
 ]
